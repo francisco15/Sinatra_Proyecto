@@ -1,0 +1,22 @@
+<section id="add">
+    <form action="/" method="post">
+        <textarea name="content" placeholder="Escribe tu tarea aquí&hellip;"></textarea>
+        <p>¡Sácalo de tu cabeza y ponlo en tu lista!</p>
+        <input type="submit" value="Tomar nota!">
+    </form>
+</section>
+
+<% @notes.each do |note| %>
+  <p>
+      <% if note['done'] == true %>
+      <h1>Nota completa</h1>
+      <%= note['title'] %>
+      <span><a href="/<%= note['id'] %>/delete">[delete]</a></span>
+      <% else %>
+      <h1>Nota incompleta</h1>
+      <%= note['title'] %>
+      <span><a href="/<%= note['id'] %>/delete">[delete]</a></span>
+      <span><a href="/<%= note['id'] %>/complete">[complete]</a></span>
+      <% end %>
+  </p>
+<% end %>
