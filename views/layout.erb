@@ -1,21 +1,38 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf8">
-        <title><%= @title %></title>
-        <link href="/reset.css" rel="stylesheet">
-        <link href="/style.css" rel="stylesheet">
-    </head>
-  
-    <body>
-        <header>
-            <h1>Cosas por hacer!</h1>
-        </header>
-   
-        <div id="main">
-            <%= yield %>
+  <head>
+      <meta charset="utf-8">
+      <title><%= @title %></title>
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+      <link href="/style.css" rel="stylesheet">
+  </head>
+  <body>
+      <form action="/" method="post">
+        <input name="content" type="text" id="new-task" placeholder="Ingresa una tarea y oprime Enter">
+      </form>
+      <div class="wrapper">
+        <div class="list">
+          <h3>Por hacer:</h3>
+          <ul class="todo">
+          <% @notes.each do |note| %>
+            <% if note['done'] == false %>
+              <li><%= note['title'] %><span class="complete"><a href="/<%= note['id'] %>/complete" title='Completar'><i class="fa fa-check" aria-hidden="true"></i></a></span><span class="delete"><a href="/<%= note['id'] %>/delete" title='Eliminar'><i class="fa fa-trash-o" aria-hidden="true"></i></a></span> </li>
+            <% end %>
+          <% end %>
+          </ul>  
         </div>
-   
-    </body>
+
+        <div class="list">
+          <h3>Hecho:</h3>
+          <ul class="done">
+          <% @notes.each do |note| %>
+            <% if note['done'] == true %>
+              <li><%= note['title'] %><span class="delete"><a href="/<%= note['id'] %>/delete" title='Eliminar'><i class="fa fa-trash-o" aria-hidden="true"></i></a></span> </li>
+            <% end %>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+  </body>
 </html>
 

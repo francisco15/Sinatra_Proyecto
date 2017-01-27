@@ -2,9 +2,9 @@ require 'sinatra'
 require 'make_todo'
 
 get '/' do
-	@notes = Tarea.all
- 	@title = 'Lista de cosas por hacer - App'
-  	erb :home
+  @notes = Tarea.all
+  @title = 'Lista de Tareas'
+  erb :layout
 end  
 
 post '/' do

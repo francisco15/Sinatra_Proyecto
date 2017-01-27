@@ -1,0 +1,62 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.list {
+  display: inline-block;
+  width: 330px;
+  vertical-align: top;
+  margin: 0 50px;
+}
+
+ul {
+  font-size: 18px;
+  background-color: #f5f5f2;
+  padding: 0;
+  min-height: 50px;
+  border: 1px solid #DBDBD3;
+}
+
+ul li {
+  position: relative;
+  color: #66665D;
+  list-style-type: none;
+  padding: 20px;
+  border-bottom: 1px solid #DBDBD3;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+ul.done li {
+  color: #ABABA4;
+  text-decoration: line-through;
+}
+
+ul .delete {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  font-weight: bold;
+  text-shadow: 1px 1px white;
+}
+
+ul .complete {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+input[type=text] {
+  box-sizing: border-box;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 13px;
+}
+
+a:hover, a:visited, a:link, a:active {
+  color: #000000;
+  text-decoration: none;
+}
