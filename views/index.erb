@@ -7,6 +7,7 @@
       <link href="/style.css" rel="stylesheet">
   </head>
   <body>
+    <!-- Agregar estilos aqui no funciona en Chrome -->
     <header style="font-size: 300%;font-weight: bold; text-align: center;margin-bottom:30px;margin-top: 20px;">Lista de Tareas</header>
 
     <div>
@@ -15,7 +16,7 @@
         <ul class="todo">
         <% @notes.each do |note| %>
           <% if note['done'] == false %>
-            <li><%= note['title'] %><span class="complete"><a href="/<%= note['id'] %>/complete" title='Completar'><i class="fa fa-check" aria-hidden="true" style="color: green;"></i></a></span><span class="delete"><a href="/<%= note['id'] %>/delete" title='Eliminar'><i class="fa fa-trash-o" aria-hidden="true" style="color: red;"></i></a></span> </li>
+            <li><%= note['title'] %><span class="complete"><a href="/<%= note['id'] %>/complete" title='Completar'><i class="fa fa-check" aria-hidden="true"></i></a></span><span class="delete"><a href="/<%= note['id'] %>/delete" title='Eliminar'><i class="fa fa-trash-o" aria-hidden="true"></i></a></span> </li>
           <% end %>
         <% end %>
         </ul>
@@ -29,7 +30,7 @@
         <ul class="done">
         <% @notes.each do |note| %>
           <% if note['done'] == true %>
-            <li><%= note['title'] %><span class="delete"><a href="/<%= note['id'] %>/delete" title='Eliminar'><i class="fa fa-trash-o" aria-hidden="true" style="color: red;"></i></a></span> </li>
+            <li><%= note['title'] %><span class="delete"><a href="/<%= note['id'] %>/delete" title='Eliminar'><i class="fa fa-trash-o" aria-hidden="true"></i></a></span> </li>
           <% end %>
         <% end %>
         </ul>
