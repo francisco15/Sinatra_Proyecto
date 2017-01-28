@@ -4,7 +4,7 @@ require 'make_todo'
 get '/' do
   @notes = Tarea.all
   @title = 'Lista de Tareas'
-  erb :layout
+  erb :index
 end  
 
 post '/' do
